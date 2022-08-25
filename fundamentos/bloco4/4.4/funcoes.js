@@ -42,7 +42,7 @@
 // console.log(status); // deslogado
 
 // logarDeslogar();
-// console.log(status); //logado
+// console.log(status); // logado
 
 // logarDeslogar();
 // console.log(status); // deslogado
