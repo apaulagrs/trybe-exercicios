@@ -9,10 +9,16 @@ body {
 #data {
     margin: 10px
 }
+
+.buttom {
+    display: flex;
+    justify-content: start;
+}
+
 .btn-primary {
-    margin: 2px auto;
+    margin: 2px 5px;
 }
 
 .btn-secondary {
-    margin: 2px auto;
-} 
+    margin: 2px 5px;
+}
