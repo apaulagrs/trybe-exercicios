@@ -12,7 +12,24 @@
 
 // testingScope(true);
 
-const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+/* const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 const sortOddsAndEvens = (array) => oddsAndEvens.sort((a, b) => a - b);
 
-console.log(sortOddsAndEvens(oddsAndEvens));
+console.log(sortOddsAndEvens(oddsAndEvens)); */
+
+// PARTE II
+// EXERCICIO 1:
+
+// Crie uma função que receba um número e retorne seu fatorial.
+
+let result;
+const factorial = (n) => {
+  for (let i = (n - 1); i >= 1; i -= 1) {
+    n = n * i;
+    result = n;
+  }
+  n <= 0 ? result = 1 : result;
+  return result;
+}
+
+console.log(`Esse é o fatorial ${factorial(5)}`);
