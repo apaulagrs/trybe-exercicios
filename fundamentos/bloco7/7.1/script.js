@@ -36,7 +36,7 @@ console.log(`Esse é o fatorial ${factorial(5)}`); */
 
 // Exercício 2:
 
-const longestWord = (phrase) => {
+/* const longestWord = (phrase) => {
   const split = phrase.split(' ');
   let longest;
   for (let i = 1; i < split.length; i += 1) {
@@ -51,5 +51,6 @@ const longestWord = (phrase) => {
   console.log(longest)
 }
 
-longestWord('Antônio foi ao banheiro e não sabemos o que aconteceu');
+longestWord('Antônio foi ao banheiro e não sabemos o que aconteceu'); */
 
+// 🚀 Exercício 3
