@@ -51,11 +51,16 @@
   .movie-container {
     display: flex;
     flex-direction: column;
+    align-self: center;
+    flex-grow: 10;
+    flex-basis: 700px;
   }
   
   .movie-container h2 {
     margin: 40px 0;
     text-align: center;
+    align-self: center;
+    flex-grow: 1;
   }
   
   .card-container {
@@ -72,12 +77,16 @@
     height: 150px;
     justify-content: center;
     margin: 10px;
+    flex-basis: 16%;
   }
   
   .aside-container {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    flex-basis: 350px;
+    align-self: center;
+    flex-grow: 1;
   }
   
   .aside-container h3, h4 {
@@ -88,4 +97,6 @@
   .aside-container p {
     margin: 10px 0;
     text-align: justify;
+    align-self: center;
+    flex-grow: 0;
   }
