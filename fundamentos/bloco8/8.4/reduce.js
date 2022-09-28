@@ -108,4 +108,3 @@ const reportBetter = (students) => students.map((student) => ({
 }));
 
 console.log(reportBetter(estudantes));
-
