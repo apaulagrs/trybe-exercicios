@@ -61,4 +61,10 @@ describe('Testa se a função uppercase retorna o esperado', () => {
       const expected = undefined;
       expect(actual).toBe(expected);
   })
+
+  it('Retorna indefinido quando não é passado nenhum parâmetro.', () => {
+    const actual = uppercase('');
+    const expected = undefined;
+    expect(actual).toBe(expected);
+  })
 });
