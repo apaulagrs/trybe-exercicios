@@ -5,44 +5,69 @@ class Form extends Component {
     name: '',
     email: '',
     about: '',
+    select: '',
   }
 
-  handleChange = (event) => {
+  handleChange = ({ target }) => {
+    const { name, value} = target;
     this.setState({
-      about: event.target.value,
+      [name]: value,
     })
   }
   render() {
+    const { name, email, about, select } = this.state;
     return (
       <div>
-        <h1 class="display-5">
+        <h1 className="display-5">
           New Form
         </h1>
         <form>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="Complete name"/>
+            <div className="form-floating mb-3">
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                id="floatingInput"
+                placeholder="Complete name"
+                value={ name }
+                onChange={ this.handleChange }
+              />
               <label htmlFor="floatingInput">Name: </label>
             </div>
 
-            <div class="form-floating mb-3">
-              <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+            <div className="form-floating mb-3">
+              <input
+                type="email"
+                name="email"
+                className="form-control" 
+                id="floatingInput"
+                placeholder="name@example.com"
+                value={ email }
+                onChange={ this.handleChange }
+              />
               <label htmlFor="email">Email: </label>
             </div>
             
-            <div class="form-floating">
+            <div className="form-floating">
               <textarea 
                 name="about"
-                class="form-control"
+                className="form-control"
                 placeholder="Leave a comment here"
                 id="floatingTextarea"
-                value={ this.state.about }
+                value={ about }
                 onChange={ this.handleChange }
               ></textarea>
               <label htmlFor="textarea">About you:</label>
             </div>
             
-            <div class="form-floating">
-              <select name="select" class="form-select" id="floatingSelect">
+            <div className="form-floating">
+              <select 
+                name="select"
+                className="form-select"
+                id="floatingSelect"
+                value={ select }
+                onChange={ this.handleChange }
+              >
                 <option value="black">Black</option>
                 <option value="red">Red</option>
                 <option value="blue">Blue</option>
