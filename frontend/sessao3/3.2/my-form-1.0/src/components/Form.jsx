@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import NameInput from './NameInput';
+import EmailInput from './EmailInput';
 
 class Form extends Component {
   state = {
@@ -6,47 +8,42 @@ class Form extends Component {
     email: '',
     about: '',
     select: '',
+    terms: false,
+    errors: true,
+  }
+
+  handleError = () => {
+    const { name } = this.state;
+
+    const errorCases = [
+      name.length,
+    ]
+
+    const formChecked = errorCases.every((error) => error !== true);
+
+    this.setState({
+      errors: !formChecked,
+    })
   }
 
   handleChange = ({ target }) => {
-    const { name, value} = target;
+    const { name } = target;
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({
       [name]: value,
     })
   }
   render() {
-    const { name, email, about, select } = this.state;
+    const { name, email, about, select, terms, errors } = this.state;
     return (
       <div>
         <h1 className="display-5">
           New Form
         </h1>
         <form>
-            <div className="form-floating mb-3">
-              <input
-                type="text"
-                name="name"
-                className="form-control"
-                id="floatingInput"
-                placeholder="Complete name"
-                value={ name }
-                onChange={ this.handleChange }
-              />
-              <label htmlFor="floatingInput">Name: </label>
-            </div>
+            <NameInput name={ name } handleChange={ this.handleChange } />
 
-            <div className="form-floating mb-3">
-              <input
-                type="email"
-                name="email"
-                className="form-control" 
-                id="floatingInput"
-                placeholder="name@example.com"
-                value={ email }
-                onChange={ this.handleChange }
-              />
-              <label htmlFor="email">Email: </label>
-            </div>
+            <EmailInput email={ email } handleChange={ this.handleChange } />
             
             <div className="form-floating">
               <textarea 
@@ -75,6 +72,21 @@ class Form extends Component {
               </select>
               <label htmlFor="floatingSelect">Favorite Color</label>
             </div>
+
+            <div className="input-group mb-3">
+              <input 
+                type="checkbox"
+                name="terms"
+                className="form-check-input mt-0"
+                id="checkbox"
+                alue={ terms }
+                onChange={ this.handleChange }
+              />
+              <label htmlFor="checkbox">I agree with all terms.</label>
+            </div>
+            { errors
+              ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+              : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
         </form>
       </div>
     )
