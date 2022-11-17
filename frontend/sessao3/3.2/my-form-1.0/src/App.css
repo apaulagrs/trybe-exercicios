@@ -1,0 +1,13 @@
+h1 {
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+form div {
+  margin: 2em;
+}
+
+#checkbox {
+  margin: 5px;
+}
