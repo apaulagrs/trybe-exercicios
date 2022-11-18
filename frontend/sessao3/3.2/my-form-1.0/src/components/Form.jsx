@@ -84,9 +84,9 @@ class Form extends Component {
               />
               <label htmlFor="checkbox">I agree with all terms.</label>
             </div>
-            { errors
+            {/* { errors
               ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
-              : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
+              : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> } */}
         </form>
       </div>
     )
