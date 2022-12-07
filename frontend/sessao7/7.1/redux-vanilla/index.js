@@ -20,6 +20,9 @@ incrementButton.addEventListener('click', () => {
 });
 
 store.subscribe(() => {
+  const globalState = store.getState();
+  const counterElement = document.querySelector('h2');
+  counterElement.innerHTML = globalState.count;
 
   console.log('o estado foi alterado!');
 });
