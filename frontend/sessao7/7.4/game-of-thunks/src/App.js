@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CharacterCard from './components/CharacterCard';
 import { fetchCharacterReducer } from './redux/actions';
+
+import './App.css';
 
  class App extends Component {
   constructor() {
@@ -14,8 +17,8 @@ import { fetchCharacterReducer } from './redux/actions';
     const { characterInput } = this.state;
     const { dispatch } = this.props;
     return (
-      <div className='App'>
-        <label htmlFor="character">Personagem:</label>
+      <div>
+        <label htmlFor="character">Character's name:</label>
         <input
           type="text"
           name="character"
@@ -24,10 +27,12 @@ import { fetchCharacterReducer } from './redux/actions';
           value={ characterInput }
           />
         <button
+          type="button"
           onClick={ () => dispatch(fetchCharacterReducer(characterInput)) }
         >
-          Enviar
+          Search
         </button>
+        <CharacterCard />
       </div>
     )
   }

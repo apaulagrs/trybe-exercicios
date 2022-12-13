@@ -6,22 +6,14 @@ const requestCharacter = () => ({
   type: REQUEST_CHARACTER,
 });
 
-const responseCharacterSuccess = ({ name, gender, culture, titles, playedBy }) => ({
+const responseCharacterSuccess = (character) => ({
   type: REQUEST_CHARACTER_SUCCESS,
-  payload: {
-    name,
-    gender,
-    culture,
-    titles,
-    playedBy,
-  }
+  character,
 });
 
 const responseCharacterError = (error) => ({
   type: REQUEST_CHARACTER_ERROR,
-  payload: {
-    error,
-  }
+  error,
 });
 
 export const fetchCharacterReducer = (characterName) => {

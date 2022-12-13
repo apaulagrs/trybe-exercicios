@@ -1,13 +1,8 @@
 import { REQUEST_CHARACTER, REQUEST_CHARACTER_SUCCESS, REQUEST_CHARACTER_ERROR } from '../actions';
 
 const INITAL_STATE = {
-  name: '',
-  gender: '',
-  culture: '',
-  titles: '',
-  playedBy: '',
-  errorMessage: '',
   isLoading: false,
+  character: '',
 }
 
 const characterReducer = (state = INITAL_STATE, action) => {
@@ -20,18 +15,14 @@ const characterReducer = (state = INITAL_STATE, action) => {
     case REQUEST_CHARACTER_SUCCESS:
       return {
         ...state,
-        isLoading: true,
-        name: action.payload.name,
-        gender: action.payload.gender,
-        culture: action.payload.culture,
-        titles: action.payload.titles,
-        playedBy: action.payload.playedBy,
+        isLoading: false,
+        character: action.character[0],
       }
     case REQUEST_CHARACTER_ERROR:
       return {
         ...state,
         isLoading: false,
-        errorMessage: action.payload.error.message || 'ERRO!'
+        errorMessage: action.error || 'ERRO!'
       }
     default:
       return state;
