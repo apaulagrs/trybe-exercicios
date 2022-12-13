@@ -1,16 +1,36 @@
-import React from 'react';
-import Input from './components/Input';
-import Button from './components/Button';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchCharacterReducer } from './redux/actions';
 
-import './App.css';
+ class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      characterInput: '',
+    }
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <Input />
-      <Button />
-    </div>
-  );
-}
+  render() {
+    const { characterInput } = this.state;
+    const { dispatch } = this.props;
+    return (
+      <div className='App'>
+        <label htmlFor="character">Personagem:</label>
+        <input
+          type="text"
+          name="character"
+          id="character"
+          onChange={ ({ target }) => this.setState({ characterInput: target.value }) }
+          value={ characterInput }
+          />
+        <button
+          onClick={ () => dispatch(fetchCharacterReducer(characterInput)) }
+        >
+          Enviar
+        </button>
+      </div>
+    )
+  }
+};
 
-export default App;
+export default connect()(App);
