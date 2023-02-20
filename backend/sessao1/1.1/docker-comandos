@@ -1,0 +1,22 @@
+docker container ls
+--- listar todos os containers em execução neste momento em sua máquina.
+docker container ls -a
+--- visualizar todos os containers atuais
+docker container run <flags>? <imagem>:<tag> <argumentos>?
+--- para executar um container utilizando a imagem identificada
+docker container run --rm alpine:3.14 echo "Hello World 3"
+--- run: executar
+--- rm: remove após finalização
+--- alpine: imagem
+--- 3.14: flags
+--- echo: como um console.log()
+--- "Hello World 3": mensagem a ser executada pelo terminal do container
+--- -d ou --detach: executa em segundo plano
+docker exec -it meu-container sh
+--- -t: sessão de terminal
+--- -i: sessão iterativa
+--- sh: programa de terminal linux
+dockcer top
+--- informações sobre processos executados dentro do terminal
+docker container prune
+--- remove todos os containers inativos do seu computador.
