@@ -1,4 +1,4 @@
-// brlValue.js
-const brl = 5.37;
+// index.js
+const convert = require('path');
 
-module.exports = brl;
+console.log(convert.path);
