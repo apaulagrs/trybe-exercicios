@@ -13,11 +13,11 @@ const readFile = async () => {
   } catch (error) {
     console.log(`Arquivo não pode ser lido: ${error}`);
   }
-}
+};
 
 app.use(express.json());
 
-app.get('/movies', async (req, res) => {
+app.get('/movies', async (_req, res) => {
   try {
     const movies = await readFile();
     res.status(200).json(movies);
@@ -35,7 +35,6 @@ app.get('/movies/:id', async (req, res) => {
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
-
 });
 
 app.post('/movies', async (req, res) => {
@@ -51,8 +50,44 @@ app.post('/movies', async (req, res) => {
     await fs.writeFile(moviesPath, allMovies);
     res.status(201).json(newMovie);
   } catch (error) {
-    res.status(500).send({ message: error,message });
+    res.status(500).send({ message: error.message });
   }
-})
+});
+
+app.put('/movies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { movie, price } = req.body;
+    const movies = await readFile();
+    const index = movies.findIndex((e) => e.id === +id);
+
+    movies[index] = {
+      id: +id,
+      movie,
+      price,
+    };
+
+    const updateMovies = JSON.stringify(movies, null, 2);
+    await fs.writeFile(moviesPath, updateMovies);
+    res.status(200).json(movies[index]);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+});
+
+app.delete('/movies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const movies = await readFile();
+    const filteredMovies = movies.filter((movie) => movie.id !== +id);
+    const updatedMovies = JSON.stringify(filteredMovies, null, 2);
+
+    await fs.writeFile(moviesPath, updatedMovies);
+
+    res.status(204).end();
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+});
 
 module.exports = app;
