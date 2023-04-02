@@ -2,10 +2,10 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const sinon = require('sinon');
 const fs = require('fs');
-
 const app = require('../../src/app');
 
 chai.use(chaiHttp);
+const { expect } = chai;
 
 const mockFile = JSON.stringify({
   brands: [
@@ -45,8 +45,6 @@ const mockFile = JSON.stringify({
     },
   ],
 })
-
-const { expect } = chai;
 
 describe('Usando o método GET em /chocolates', function () {
   beforeEach(function () {
@@ -114,5 +112,21 @@ describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId
         brandId: 1,
       },
     ]);
+  });
+});
+
+describe('Usando o método GET em /chocolates/total', function () {
+  it('Retorna a quantidade total de chocolates', async function () {
+    // retornar a quantidade de tipos de chocolates
+
+    // arrange 
+    const response = await chai.request(app)
+      .get('/chocolates/total');
+    // act
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.be.deep.equal({
+      totalChocolates: 4
+    });
+    // assert
   });
 });

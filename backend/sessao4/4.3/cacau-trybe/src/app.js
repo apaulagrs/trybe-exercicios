@@ -2,10 +2,17 @@ const express = require('express');
 const cacauTrybe = require('./cacauTrybe');
 
 const app = express();
+app.use(express.json());
 
 app.get('/chocolates', async (_req, res) => {
   const chocolates = await cacauTrybe.getAllChocolates();
   res.status(200).json({ chocolates });
+});
+
+app.get('/chocolates/total', async (req, res) => {
+  const chocolates = await cacauTrybe.getAllChocolates();
+
+  res.status(200).json({ totalChocolates: chocolates.length });
 });
 
 app.get('/chocolates/:id', async (req, res) => {
