@@ -15,7 +15,7 @@ app.get('/teams', (_req, res) => res.json(teams));
 const existingId = (req, res, next) => {
   const id = +req.params.id;
   if (teams.some((t) => t.id === id)) {
-    return next();
+    next();
   } else {
     res.sendStatus(404);
   }
@@ -44,27 +44,20 @@ app.post('/teams', validateTeam,  (req, res) => {
 
 });
 
-app.put('/teams/:id', validateTeam, (req, res) => {
+app.put('/teams/:id', existingId, validateTeam, (req, res) => {
   const id = Number(req.params.id);
-  const requiredProperties = ['nome', 'sigla'];
   const team = teams.find(t => t.id === id);
-  if (team) {
-    const index = teams.indexOf(team);
-    const updated = { id, ...req.body };
-    teams.splice(index, 1, updated);
-    res.status(201).json(updated);
-  } else {
-    res.sendStatus(400);
-  }
+  const index = teams.indexOf(team);
+  const updated = { id, ...req.body };
+  teams.splice(index, 1, updated);
+  res.status(201).json(updated);
 });
 
-app.delete('/teams/:id', (req, res) => {
+app.delete('/teams/:id', existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
-  if (team) {
-    const index = teams.indexOf(team);
-    teams.splice(index, 1);
-  }
+  const index = teams.indexOf(team);
+  teams.splice(index, 1);
   res.sendStatus(204);
 });
 
