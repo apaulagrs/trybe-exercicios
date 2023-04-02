@@ -1,4 +1,6 @@
 const express = require('express');
+const validateTeam = require('./middlewares/validateTeam');
+const existingId = require('./middlewares/existingId');
 
 const app = express();
 
@@ -12,29 +14,11 @@ app.use(express.json());
 
 app.get('/teams', (_req, res) => res.json(teams));
 
-const existingId = (req, res, next) => {
-  const id = +req.params.id;
-  if (teams.some((t) => t.id === id)) {
-    next();
-  } else {
-    res.sendStatus(404);
-  }
-};
-
 app.get('/teams/:id', existingId, (req, res) => {
   const id = Number(req.params.id);
   const team = teams.find(t => t.id === id);
   res.json(team);
 });
-
-const validateTeam = (req, res) => {
-  const requiredProperties = ['nome', 'sigla'];
-  if (requiredProperties.every((property) => property in req.body)) {
-    next();
-  } else {
-    res.sendStatus(400);
-  }
-};
 
 app.post('/teams', validateTeam,  (req, res) => {
   const team = { id: nextId, ...req.body };
