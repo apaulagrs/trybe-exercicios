@@ -13,7 +13,7 @@ app.use('/teams', teamsRouter);
 
 app.use((err, _req, _res, next) => {
   console.error(err.stack);
-  next(err);
+  return next(err);
 });
 
 app.use((error, _req, res, _next) => {
