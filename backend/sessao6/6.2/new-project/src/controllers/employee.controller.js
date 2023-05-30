@@ -26,13 +26,28 @@ const getById = async (req, res) => {
     }
 
     return res.status(200).json(employee);
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error.message);
     res.status(500).json({ message: 'Ocorreu um erro' });
   };
+};
+
+const insert = async (req, res) => {
+  try {
+    const { firstName, lastName, age, city, street, number } = req.body;
+    const employee = await EmployeeService.insert({
+      firstName, lastName, age, city, street, number
+    });
+
+    return res.status(201).json({ id: employee.id, message: 'Cadastrado com sucesso' });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Ocorreu um erro' });
+  }
 };
 
 module.exports = {
   getAll,
   getById,
+  insert,
 };
