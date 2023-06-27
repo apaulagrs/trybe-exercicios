@@ -66,7 +66,7 @@ const studentsExample = [
     ],
   },
   {
-    name: 'Albus',
+    name: 'Severus',
     school: { name: 'Hogwarts', approvalGrade: 0.8 },
     disciplines: [
       { name: 'divination', grade: 0.8 },
