@@ -4,36 +4,16 @@ type Discipline = {
   letterGrade?:string;
 };
 
+type School = {
+  name:string;
+  approvalGrade:number;
+}
+
 type Student = {
   name:string;
   disciplines:Discipline[];
-  school?:string;
+  school:School;
 }
-
-// function setApproved(students:Array<Student>) {
-//   const studentWithLetterGrade = students.map((student) => {
-//     const disciplinesWithLetterGrade = student.disciplines.map((discipline) => {
-//       if (discipline.grade >= 0.9) discipline.letterGrade = 'A';
-//       else if (discipline.grade >= 0.8) discipline.letterGrade = 'B';
-//       else if (discipline.grade >= 0.7) discipline.letterGrade = 'C';
-//       else if (discipline.grade >= 0.6) discipline.letterGrade = 'D';
-//       else if (discipline.grade >= 0.1) discipline.letterGrade = 'E';
-//       else discipline.letterGrade = 'F';
-//       return discipline;
-//     });
-//     return {
-//       name: student.name,
-//       disciplines: disciplinesWithLetterGrade,
-//     };
-//   });
-//   const approvedStudents = studentWithLetterGrade.filter(({ disciplines }) => {
-//     disciplines.every((discipline) => discipline.grade > 0.7);
-//   });
-//   approvedStudents.map(({ name, disciplines }) => {
-//     console.log(`A pessoa com nome ${name} foi aprovada!`);
-//     disciplines.map(({ name, letterGrade }) => console.log(`${name}: ${letterGrade}`));
-//   });
-// }
 
 const GRADE_DICT = {
   numbers: [0.9, 0.8, 0.7, 0.6, 0.1],
@@ -59,26 +39,8 @@ const percentageGradesIntoLetters = (student:Student):Student => ({
   disciplines: student.disciplines.map(getLetterGrades),
 });
 
-// const percentageGradesIntoLetters = ({ name: stendtName, disciplines }: Student):
-//   {name:string, disciplines:Discipline[]} => ({
-//     name: stendtName,
-//     // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
-//     disciplines: disciplines.map(({ name, grade }) => {
-//       let letterGrade;
-
-//       if (grade >= 0.9) letterGrade = 'A';
-//       else if (grade >= 0.8) letterGrade = 'B';
-//       else if (grade >= 0.7) letterGrade = 'C';
-//       else if (grade >= 0.6) letterGrade = 'D';
-//       else if (grade >= 0.1) letterGrade = 'E';
-//       else letterGrade = 'F';
-
-//       return { name, grade, letterGrade };
-//     }),
-// });
-
-const approvedStudents = ({ disciplines }:Student):boolean => disciplines.every(
-  ({ grade }) => grade > 0.7,
+const approvedStudents = ({ disciplines, school }:Student):boolean => disciplines.every(
+  ({ grade }) => grade >= school.approvalGrade,
 );
 
 const updateApprovalData = (student:Student):void => {
@@ -94,24 +56,26 @@ function setApproved(students:Student[]):void {
     .map(updateApprovalData);
 }
 
-const students = [
+const studentsExample = [
   {
-    name: 'Marx',
+    name: 'Lee',
+    school: { name: 'Standard', approvalGrade: 0.7 },
     disciplines: [
-      { name: 'math', grade: 0.8 },
-      { name: 'history', grade: 0.6 },
+      { name: 'matemática', grade: 0.8 },
+      { name: 'história', grade: 0.9 },
     ],
   },
   {
-    name: 'Weber',
+    name: 'Albus',
+    school: { name: 'Hogwarts', approvalGrade: 0.8 },
     disciplines: [
-      { name: 'math', grade: 0.8 },
-      { name: 'history', grade: 0.9 },
+      { name: 'divination', grade: 0.8 },
+      { name: 'potions', grade: 0.9 },
     ],
   },
 ];
 
-setApproved(students);
+setApproved(studentsExample);
 
 export {
   percentageGradesIntoLetters,
