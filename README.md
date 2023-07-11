@@ -195,15 +195,15 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Seção 9: Programação Orientada a Objetos (POO) e SOLID
 
 - [X] 9-1: _Introdução à Orientação a Objetos_
-- [ ] 9-2: _Herança e Composição_
-- [ ] 9-3: _Polimorfismo_
-- [ ] 9-4: _SOLID - Introdução e Princípios S, O e D_
-- [ ] 9-5: _SOLID - Princípios L e I_
-- [ ] 9-6: _[Projeto - Trybers and Dragons]()_
+- [X] 9-2: _Herança e Composição_
+- [X] 9-3: _Polimorfismo_
+- [X] 9-4: _SOLID - Introdução e Princípios S, O e D_
+- [X] 9-5: _SOLID - Princípios L e I_
+- [X] 9-6: _[Projeto - Trybers and Dragons]()_
 
 ##### Seção 10: Projeto TFC - Trybe Futebol Clube
 
-- [ ] 10-1: _[Projeto - TFC - Trybe Futebol Clube]()_
+- [X] 10-1: _[Projeto - TFC - Trybe Futebol Clube]()_
 
 ##### Bônus: Projeto App de Delivery
 
@@ -213,7 +213,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Seção 1: Introdução à Python
 
-- [ ] 1-1: _Aprendendo Python_
+- [X] 1-1: _Aprendendo Python_
 - [ ] 1-2: _Entrada e Saída de Dados com Testes_
 
 ##### Seção 2: Algoritmos
