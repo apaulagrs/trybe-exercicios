@@ -16,3 +16,6 @@ with open("grass_pokemons.json", "w") as file:
         grass_type_pokemons
     )
     file.write(json_to_write)
+
+
+#  tabulate(data, headers=titles, tablefmt="fancy_grid"))
