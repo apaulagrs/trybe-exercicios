@@ -195,46 +195,46 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 ##### Seção 9: Programação Orientada a Objetos (POO) e SOLID
 
 - [X] 9-1: _Introdução à Orientação a Objetos_
-- [ ] 9-2: _Herança e Composição_
-- [ ] 9-3: _Polimorfismo_
-- [ ] 9-4: _SOLID - Introdução e Princípios S, O e D_
-- [ ] 9-5: _SOLID - Princípios L e I_
-- [ ] 9-6: _[Projeto - Trybers and Dragons]()_
+- [x] 9-2: _Herança e Composição_
+- [x] 9-3: _Polimorfismo_
+- [x] 9-4: _SOLID - Introdução e Princípios S, O e D_
+- [x] 9-5: _SOLID - Princípios L e I_
+- [x] 9-6: _[Projeto - Trybers and Dragons]()_
 
 ##### Seção 10: Projeto TFC - Trybe Futebol Clube
 
-- [ ] 10-1: _[Projeto - TFC - Trybe Futebol Clube]()_
+- [x] 10-1: _[Projeto - TFC - Trybe Futebol Clube]()_
 
 ##### Bônus: Projeto App de Delivery
 
-- [ ] _[Projeto - App de Delivery]()_
+- [x] _[Projeto - App de Delivery]()_
 
 ## Ciência da Computação :hourglass_flowing_sand:
 
 ##### Seção 1: Introdução à Python
 
-- [ ] 1-1: _Aprendendo Python_
-- [ ] 1-2: _Entrada e Saída de Dados com Testes_
+- [x] 1-1: _Aprendendo Python_
+- [x] 1-2: _Entrada e Saída de Dados com Testes_
 
 ##### Seção 2: Algoritmos
 
-- [ ] 2-1: _Complexidade de Algoritmos_
-- [ ] 2-2: _Recursividade e Estratégias para Solução de Problemas_
-- [ ] 2-3: _Algoritmos de ordenação e busca_
-- [ ] 2-4: _[Projeto - Algoritmos]()_
+- [x] 2-1: _Complexidade de Algoritmos_
+- [x] 2-2: _Recursividade e Estratégias para Solução de Problemas_
+- [x] 2-3: _Algoritmos de ordenação e busca_
+- [x] 2-4: _[Projeto - Algoritmos]()_
 
 ##### Seção 3: Estrutura de Dados I: Listas Lineares
 
-- [ ] 3-1: _P.O.O em Python_
-- [ ] 3-2: _Arrays_
-- [ ] 3-3: _Nó e Listas Encadeadas_
-- [ ] 3-4: _Pilhas e Filas_
-- [ ] 3-4: _[Projeto - TING - Trybe Is Not Google]()_
+- [x] 3-1: _P.O.O em Python_
+- [x] 3-2: _Arrays_
+- [x] 3-3: _Nó e Listas Encadeadas_
+- [x] 3-4: _Pilhas e Filas_
+- [x] 3-4: _[Projeto - TING - Trybe Is Not Google]()_
 
 ##### Seção 4: Estrutura de Dados II - Hashmaps e Sets
 
-- [ ] 4-1: _Hashmap e Dict_
-- [ ] 4-2: _Set_
+- [x] 4-1: _Hashmap e Dict_
+- [x] 4-2: _Set_
 - [ ] 4-3: _[Projeto - Restaurant Orders]()_
 
 # [...]
