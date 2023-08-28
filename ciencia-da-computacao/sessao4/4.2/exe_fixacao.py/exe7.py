@@ -27,3 +27,6 @@ if __name__ == "__main__":
           conj_lista1.union(conj_lista2))
     print("Quem ainda não entregou nenhuma das listas?",
           conj_estudantes.difference(conj_lista1.union(conj_lista2)))
+
+
+# para add
