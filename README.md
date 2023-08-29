@@ -237,4 +237,28 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 4-2: _Set_
 - [ ] 4-3: _[Projeto - Restaurant Orders]()_
 
-# [...]
+## Eletiva Java :hourglass_flowing_sand:
+
+##### Seção 1: Fundamentos de Java
+
+- [ ] 1-1: _Introdução ao Desenvolvimento em Java e Ferramentas Essenciais_
+- [ ] 1-2: _Tipos de Dados e Estruturas de Controle de Fluxo_
+- [ ] 1-3: _Manipulação de Strings, Classes e Tipos Numéricos em Java_
+- [ ] 1-4: _Aula ao vivo_
+
+##### Seção 2: Orientação a Objetos
+
+- [ ] 2-1: _Abstração, Encapsulamento e Herança_
+- [ ] 2-2: _Polimorfismo, Interfaces e Classes Abstratas_
+- [ ] 2-3: _Aula ao vivo_
+
+##### Seção 3: Java Web
+
+- [ ] 3-1: _Introdução a Java Web_
+- [ ] 3-2: _Introdução ao Spring_
+- [ ] 3-3: _API REST com Spring_
+- [ ] 3-4: _Aula ao vivo_
+- [ ] 3-5: _Exceções_
+- [ ] 3-6: _Testes com JUnit_
+- [ ] 3-7: _Containers Java e Docker_
+- [ ] 3-8: _Aula ao vivo_
