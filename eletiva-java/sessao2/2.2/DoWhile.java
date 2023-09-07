@@ -7,6 +7,6 @@ public class DoWhile {
     do {
       System.out.println("Tentando... ");
       tentativas++;
-    } while(tentativas == 3);
+    } while(tentativas == 4);
   }
 }
