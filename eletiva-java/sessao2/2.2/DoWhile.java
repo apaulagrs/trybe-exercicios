@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class DoWhile {
 
   public static void main(String[] args) {
@@ -7,6 +5,6 @@ public class DoWhile {
     do {
       System.out.println("Tentando... ");
       tentativas++;
-    } while(tentativas == 4);
+    } while(tentativas == 3);
   }
 }
